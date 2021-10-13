@@ -27,3 +27,39 @@ Higher res video that demonstrates the issue:
 https://imgur.com/a/j6YaY9W
 
 
+## How to reproduce
+
+Get the code:
+
+```bash
+git clone git@github.com:roxlu/react-native-tabbar-with-switches-issue.git
+cd react-native-tabbar-with-switches-issue
+
+```
+
+Get the modules:
+
+```bash
+cd lc
+yarn install
+```
+
+I had to recreate the gradle wrapper (you might not need this)
+```bash
+cd lc/android
+gradle wrapper
+```
+
+In terminal 1:
+
+```bash
+cd lc
+npx react-native start
+```
+
+In terminal 2:
+
+```bash
+cd lc
+npx react-native run-android
+```
