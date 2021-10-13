@@ -124,18 +124,6 @@ const RoxContextProvider = ({children}) => {
 /* --------------------------------------------------------------- */
 
 const ScreenA = (props) => {
-
-  const nav = useNavigation();
-
-  useEffect(() => {
-    const state = nav.getState()
-    if (state.routes.length > 1)
-      nav.reset({
-        routes: [
-          { name: 'screena' } // 'screenb', 'screenc'
-        ]
-      })
-  }, []);
   
   return (
     <View>
@@ -180,9 +168,10 @@ const TabberHeader = (props) => {
   let ctx = useContext(RoxContext);
 
   const onSwitchChange = (value) => {
-    console.log("Changed");
     ctx.dispatch(ctx.setAvailability(value));
   };
+
+  console.log("-> rendering");
   
   return (
     <View style={styles.headerContainer}>
